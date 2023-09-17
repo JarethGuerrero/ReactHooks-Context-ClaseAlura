@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { LogoSpace, MainSpace, FormSpace, Img } from "./styles";
+import { LogoSpace, FormSpace, Img } from "./styles";
 import DatosUsuario from "./DatosUsuario";
 import DatosPersonales from "./DatosPersonales";
 import DatosEntrega from "./DatosEntrega";
