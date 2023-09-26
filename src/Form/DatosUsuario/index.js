@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import { validarPassword, validarEmail } from "./validaciones";
 
-const DatosUsuario = () => {
+const DatosUsuario = ({ updateStep }) => {
   const [email, setEmail] = useState({ value: '', valid: null });
   const [password, setPassword] = useState({ value: '', valid: null });
 
@@ -20,6 +20,7 @@ const DatosUsuario = () => {
         if (email.valid && password.valid) {
           console.log('Siguiente formulario');
           console.log(email, password);
+          updateStep(1);
         } else {
           console.log('Verifica los datos ingresados');
         }
