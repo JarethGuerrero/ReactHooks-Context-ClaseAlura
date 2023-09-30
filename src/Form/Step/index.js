@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { TextField, Button, Box } from "@mui/material";
+import { ConunterContext } from "../../Context";
+
 
 const Step = ({ data, step }) => {
-
   const { inputs, buttonText, onSubmit } = data;
-
+  const counterData = useContext(ConunterContext)
+  console.log(counterData)
   return (
     <Box
       component="form"
@@ -17,6 +19,7 @@ const Step = ({ data, step }) => {
       }}
       onSubmit={onSubmit}
     >
+      <strong>El valor del contador es: {counterData.count} - {counterData.user.jwt} </strong>
       {
         inputs.map((input, i) => {
           const { label, type, value, valid, onChange, helperText, validator, } = input
